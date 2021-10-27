@@ -1,9 +1,11 @@
 {
     "name": "simple-availability-checker",
     "repository": {
-        "type": "github",
+        "type": "git",
         "url": "https://github.com/AgentEnder/simple-availability-checker"
     },
+    "readme": "readme.md",
+    "version": "1.0.0",
     "main": "main.js",
     "bin": {
         "simple-availability-checker": "./main.js"
@@ -23,7 +25,7 @@
     },
     "scripts": {
         "test": "jest",
-        "build": "tsc -p tsconfig.json && cp package.json dist/package.json"
+        "build": "tsc -p tsconfig.json && cp package.json dist/package.json && cp readme.md dist/readme.md"
     },
     "dependencies": {
         "dotenv": "^10.0.0",
