@@ -1,25 +1,39 @@
 {
-  "devDependencies": {
-    "@babel/core": "^7.13.16",
-    "@babel/preset-env": "^7.13.15",
-    "@babel/preset-typescript": "^7.13.0",
-    "@types/jest": "^26.0.22",
-    "@types/jsdom": "^16.2.13",
-    "@types/node-fetch": "^2.5.12",
-    "@types/node-notifier": "^8.0.1",
-    "babel-jest": "^26.6.3",
-    "jest": "^26.6.3",
-    "ts-node": "^9.1.1",
-    "typescript": "^4.2.4"
-  },
-  "scripts": {
-    "test": "jest",
-    "build": "tsc -p tsconfig.json",
-    "start": "npm run build && node dist/main.js"
-  },
-  "dependencies": {
-    "jsdom": "^18.0.0",
-    "node-fetch": "^2.6.0",
-    "node-notifier": "^10.0.0"
-  }
+    "name": "simple-availability-checker",
+    "repository": {
+        "type": "github",
+        "url": "https://github.com/AgentEnder/simple-availability-checker"
+    },
+    "main": "main.js",
+    "bin": {
+        "simple-availability-checker": "./main.js"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.13.16",
+        "@babel/preset-env": "^7.13.15",
+        "@babel/preset-typescript": "^7.13.0",
+        "@types/jest": "^26.0.22",
+        "@types/jsdom": "^16.2.13",
+        "@types/node-fetch": "^2.5.12",
+        "@types/node-notifier": "^8.0.1",
+        "babel-jest": "^26.6.3",
+        "jest": "^26.6.3",
+        "ts-node": "^9.1.1",
+        "typescript": "^4.2.4"
+    },
+    "scripts": {
+        "test": "jest",
+        "build": "tsc -p tsconfig.json && cp package.json dist/package.json"
+    },
+    "dependencies": {
+        "dotenv": "^10.0.0",
+        "enquirer": "^2.3.6",
+        "fs-extra": "^10.0.0",
+        "jsdom": "^18.0.0",
+        "node-fetch": "^2.6.0",
+        "node-notifier": "^10.0.0",
+        "open": "^8.4.0",
+        "yargs": "^17.2.1",
+        "yargs-parser": "^20.2.9"
+    }
 }
