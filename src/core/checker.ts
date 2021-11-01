@@ -13,8 +13,10 @@ export function startChecker(options: SimpleAvailabilityCheckerConfig) {
     setAsyncInterval(async () => {
         const date = new Date().toLocaleString();
         console.log(`[${date}]: CHECKING AVAILABILITY`);
-        const dom = await downloadHTML(options.url);
-        if (!checkElementExists(dom, options.selector)) {
+        const dom = await downloadHTML(options.url).catch((err: Error) => {
+            console.log('[Error]: ', err.message) 
+        });
+        if (dom && !checkElementExists(dom, options.selector)) {
             notifier.notify(
                 {
                     message: getAvailableMessage(
