@@ -1,14 +1,11 @@
 #!/usr/bin/env node
 import yargs from "yargs/yargs";
 import { registerOptions, checkHandler } from "./commands/check";
+import { cli } from "cli-forge";
 
 if (require.main === module) {
-    let program = yargs(process.argv.slice(2)).scriptName(
-        "simple-availability-checker"
-    );
-    if (
-        registerOptions(program)
-    ) {
-        checkHandler(program.argv);
-    }
+  cli("simple-availability-checker", {
+    builder: (argv) => registerOptions(argv),
+    handler: checkHandler,
+  }).forge();
 }
